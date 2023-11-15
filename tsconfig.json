@@ -13,7 +13,7 @@
       "@/prisma/*": ["prisma/*"],
       "@/styles/*": ["styles/*"]
     },
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,

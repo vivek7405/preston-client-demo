@@ -1,15 +1,33 @@
 "use client";
 
-import { useAuthFlow } from "../providers/AuthFlowProvider";
+import { usePathname } from "next/navigation";
+// import { useAuthFlow } from "../providers/AuthFlowProvider";
 import { AuthMenuItem } from "./auth-menu-item";
 
 export function AuthMenu() {
-  const { authStage, setAuthStage } = useAuthFlow();
+  const path = usePathname();
+  // const { authStage, setAuthStage } = useAuthFlow();
   const menuItems = [
-    { header: "Account Type", subHeader: "Select your account type" },
-    { header: "Account Details", subHeader: "Add your personal info" },
-    { header: "Creator Info", subHeader: "Setup your business details" },
-    { header: "Completed", subHeader: "Your account is created" },
+    {
+      header: "Account Type",
+      subHeader: "Select your account type",
+      route: "account-type",
+    },
+    {
+      header: "Account Details",
+      subHeader: "Add your personal info",
+      route: "account-details",
+    },
+    {
+      header: "Creator Info",
+      subHeader: "Setup your business details",
+      route: "creator-info",
+    },
+    {
+      header: "Completed",
+      subHeader: "Your account is created",
+      route: "completed",
+    },
   ];
 
   return (
@@ -18,10 +36,11 @@ export function AuthMenu() {
         {menuItems.map((item, index) => {
           return (
             <AuthMenuItem
-              key={index + 1}
+              key={item.route}
               header={item.header}
               subHeader={item.subHeader}
               index={index + 1}
+              route={item.route}
             />
           );
         })}

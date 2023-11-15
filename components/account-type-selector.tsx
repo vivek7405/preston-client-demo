@@ -1,10 +1,19 @@
-import { useAuthFlow } from "../providers/AuthFlowProvider";
+"use client";
 
+import { useAuthFlow } from "../app/providers/AuthFlowProvider";
+
+type SelectorType = "creator" | "agency";
 type AccountTypeSelectorProps = {
-  selector: "creator" | "agency";
+  // accountType: SelectorType;
+  // setAccountType: (accountType: SelectorType) => void;
+  selector: SelectorType;
 };
 
-export function AccountTypeSelector({ selector }: AccountTypeSelectorProps) {
+export function AccountTypeSelector({
+  // accountType,
+  // setAccountType,
+  selector,
+}: AccountTypeSelectorProps) {
   const { accountType, setAccountType } = useAuthFlow();
 
   return (
