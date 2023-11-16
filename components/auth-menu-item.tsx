@@ -36,7 +36,9 @@ export function AuthMenuItem({
           {index}
         </button> */}
         <Link
-          href={`/auth-flow/${route}`}
+          href={`/auth-flow/${
+            route.includes("account-details") ? `${route}/creator` : `${route}`
+          }`}
           className={`px-3 py-1 rounded-lg text-white ${
             path.includes(route)
               ? "bg-green-500 border border-green-500"

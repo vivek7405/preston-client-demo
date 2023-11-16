@@ -94,7 +94,7 @@ export default function Form({ type }: { type: "login" | "register" }) {
         className={`${
           loading
             ? "cursor-not-allowed border-gray-200 bg-gray-100"
-            : "border-black bg-black text-white hover:bg-white hover:text-black"
+            : "bg-blue-500 text-white hover:bg-blue-600"
         } flex h-10 w-full items-center justify-center rounded-md border text-sm transition-all focus:outline-none`}
       >
         {loading ? (
@@ -106,7 +106,7 @@ export default function Form({ type }: { type: "login" | "register" }) {
       {type === "login" ? (
         <p className="text-center text-sm text-gray-600">
           Don&apos;t have an account?{" "}
-          <Link href="/register" className="font-semibold text-gray-800">
+          <Link href="/auth-flow/account-type" className="font-semibold text-blue-400">
             Sign up
           </Link>{" "}
           for free.
