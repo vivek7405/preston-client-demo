@@ -24,7 +24,7 @@ export function AuthMenuItem({
 
   return (
     <>
-      <div className="w-48 flex items-center space-x-2">
+      <div className="w-56 flex items-center space-x-3">
         {/* <button
           onClick={() => setAuthStage(index)}
           className={`px-3 py-1 rounded-lg text-white ${

@@ -1,17 +1,20 @@
-import SideNav from "@/components/side-nav";
-import SignOut from "@/components/sign-out";
+"use client";
+
+import DashboardTile from "@/components/dashboard-tile";
 
 export default function DashboardPage() {
+  const tilesList = [
+    { subHeader: "Links Scraped", color: "blue" },
+    { subHeader: "Links Manually Checked", color: "purple" },
+    { subHeader: "Link Violations", color: "yellow" },
+    { subHeader: "Links Removed", color: "red" },
+  ];
   return (
-    <div className="flex w-full h-full bg-neutral-100">
-      <div className="w-full h-full">
-        <div className="flex px-10">
-          <div className="w-1/5">
-            <SideNav />
-          </div>
-          <div className="w-4/5 p-3">Dashboard</div>
-        </div>
-        {/* <SignOut /> */}
+    <div className="w-full h-full">
+      <div className="w-full flex space-x-5">
+        {tilesList.map((tile, index) => {
+          return <DashboardTile key={index} header="252" {...tile} />;
+        })}
       </div>
     </div>
   );
