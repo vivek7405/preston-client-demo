@@ -48,7 +48,7 @@ export function DashboardTableContent() {
             checked={rows.every((row) => row.selected)}
             className="w-10 h-10"
           />
-          <div className="w-full h-full flex items-center justify-between text-sm text-gray-500 font-medium">
+          <div className="w-full h-full flex items-center justify-between text-xs text-gray-500 font-medium">
             <p className="w-1/5">ID</p>
             <p className="w-1/5">DATE REMOVED</p>
             <p className="w-1/5">LINK</p>
