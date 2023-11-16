@@ -15,7 +15,8 @@ export default function SideNavItem({ text, href, icon }: SideNavItemProps) {
 
   return (
     <>
-      <div
+      <Link
+        href={href}
         className={`${
           isActive
             ? "bg-blue-50 text-blue-500"
@@ -23,8 +24,8 @@ export default function SideNavItem({ text, href, icon }: SideNavItemProps) {
         } font-medium text-sm px-3 py-2 rounded-lg flex items-center space-x-3`}
       >
         {icon}
-        <Link href={href}>{text}</Link>
-      </div>
+        <p>{text}</p>
+      </Link>
     </>
   );
 }
