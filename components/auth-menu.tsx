@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { AuthMenuItem } from "./auth-menu-item";
 import MetronicAuthFlowLogo from "@/lib/assets/metronic-auth-flow-logo";
 import StepVerticalLineSVG from "@/lib/assets/step-vertical-line-svg";
+import Link from "next/link";
 
 export function AuthMenu() {
   const path = usePathname();
@@ -38,7 +39,7 @@ export function AuthMenu() {
         <div className="relative -top-20">
           <MetronicAuthFlowLogo />
         </div>
-        {/* <div className="h-20"></div> */}
+
         {menuItems.map((item, index) => {
           return (
             <div className="flex flex-col space-y-2">
@@ -58,33 +59,13 @@ export function AuthMenu() {
           );
         })}
 
-        {/* <AuthMenuItem
-          authStage={authStage}
-          header="Account Type"
-          subHeader="Select your account type"
-          index={1}
-        />
-
-        <AuthMenuItem
-          authStage={authStage}
-          header="Account Details"
-          subHeader="Add your personal info"
-          index={2}
-        />
-
-        <AuthMenuItem
-          authStage={authStage}
-          header="Creator Info"
-          subHeader="Setup your business details"
-          index={3}
-        />
-
-        <AuthMenuItem
-          authStage={authStage}
-          header="Completed"
-          subHeader="Your account is created"
-          index={4}
-        /> */}
+        <div className="absolute bottom-0">
+          <div className="flex items-center justify-center space-x-5 p-7 text-sm text-blue-300">
+            <Link href="/terms">Terms</Link>
+            <Link href="/plans">Plans</Link>
+            <Link href="/contact-us">Contact Us</Link>
+          </div>
+        </div>
       </div>
     </>
   );

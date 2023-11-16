@@ -1,6 +1,8 @@
 "use client";
 
+import { UserSquareSVG } from "@/lib/assets/user-square-svg";
 import { useAuthFlow } from "../app/providers/AuthFlowProvider";
+import { BriefCaseSVG } from "@/lib/assets/briefcase-svg";
 
 type SelectorType = "creator" | "agency";
 type AccountTypeSelectorProps = {
@@ -24,7 +26,12 @@ export function AccountTypeSelector({
           accountType === selector ? "border-blue-500 bg-blue-50" : ""
         }`}
       >
-        <div className="p-3 bg-blue-500 rounded-lg" />
+        {/* <div className="p-3 bg-blue-500 rounded-lg" /> */}
+        {selector === "creator" ? (
+          <UserSquareSVG selected={accountType === selector} />
+        ) : (
+          <BriefCaseSVG selected={accountType === selector} />
+        )}
         <div className="flex flex-col space-y-1 items-start">
           <p className="font-medium capitalize">{selector}</p>
           <p className="text-xs text-neutral-400">

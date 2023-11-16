@@ -1,6 +1,7 @@
 "use client";
 
 type DashboardTilesProps = {
+  icon: any;
   header: string;
   subHeader: string;
   color: string;
@@ -37,6 +38,7 @@ const getIconColorFromColor = (color: string) => {
 };
 
 export default function DashboardTile({
+  icon,
   header,
   subHeader,
   color,
@@ -50,7 +52,9 @@ export default function DashboardTile({
     >
       <div className="w-full flex items-center justify-between">
         <p className="font-bold text-3xl">{header}</p>
-        <div className={`p-3 ${iconColor}`} />
+        <div className={`p-1 ${iconColor} flex items-center justify-center`}>
+          {icon}
+        </div>
       </div>
       <p className="text-sm text-neutral-600">{subHeader}</p>
     </div>
