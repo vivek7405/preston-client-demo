@@ -35,7 +35,7 @@ export function DashboardTableContent() {
   return (
     <>
       <div className="w-full">
-        <div className="w-full h-16 flex items-center justify-center border-b">
+        <div className="w-full h-16 flex items-center justify-center border-b border-dashed">
           <input
             onChange={(e) => {
               const checked = e.currentTarget.checked;
