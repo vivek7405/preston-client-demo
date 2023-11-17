@@ -27,6 +27,8 @@ export default async function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL("/auth-flow/account-type", req.url));
   } else if (session && path === "/") {
     return NextResponse.redirect(new URL("/dashboard", req.url));
+  } else if (session && path === "/login") {
+    return NextResponse.redirect(new URL("/dashboard", req.url));
   }
 
   // if (!session && (path === "/dashboard" || path === "/")) {
