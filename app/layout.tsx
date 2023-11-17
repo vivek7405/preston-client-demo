@@ -35,8 +35,14 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.variable}>
-        <Toaster />
-        {children}
+        <p className="w-full h-screen flex lg:hidden items-center justify-center text-sm text-neutral-800 p-10 text-center">
+          Please use a larger screen to access this app. This app is not yet
+          supported on mobile and tablet screens.
+        </p>
+        <div className="hidden lg:block">
+          <Toaster />
+          {children}
+        </div>
       </body>
     </html>
   );
